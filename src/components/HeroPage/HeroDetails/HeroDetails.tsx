@@ -9,19 +9,19 @@ interface IHeroDetails {
   mana: number;
   name: string;
   str: number;
-  agi: number | any;
+  agi: number;
   int: number;
-  str_gain: number | any;
-  int_gain: number | any;
-  agi_gain: number | any;
-  base_attack_min: number | any;
-  base_attack_max: number | any;
-  attack_rate: number | any;
-  attack_range: number | any;
-  projectile_speed: number | any;
-  armor: number | any;
-  mr: number | any;
-  move_speed: number | any;
+  str_gain: number;
+  int_gain: number;
+  agi_gain: number;
+  base_attack_min: number;
+  base_attack_max: number;
+  attack_rate: number;
+  attack_range: number;
+  projectile_speed: number;
+  armor: number;
+  mr: number;
+  move_speed: number;
 }
 
 const HeroDetails: React.FC<IHeroDetails> = ({

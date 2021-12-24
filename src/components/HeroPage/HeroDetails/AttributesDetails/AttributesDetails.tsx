@@ -13,11 +13,11 @@ interface IAttributesDetails {
   health: number;
   mana: number;
   str: number;
-  agi: number | any;
+  agi: number;
   int: number;
-  str_gain: number | any;
-  int_gain: number | any;
-  agi_gain: number | any;
+  str_gain: number;
+  int_gain: number;
+  agi_gain: number;
 }
 
 const AttributesDetails: React.FC<IAttributesDetails> = ({

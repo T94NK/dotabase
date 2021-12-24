@@ -7,11 +7,11 @@ import { Header } from './components/Header';
 import { HeroPage } from './containers/HeroPage';
 
 const App: React.FC = () => (
-  <BrowserRouter>
+  <BrowserRouter basename='/dotabase'>
     <Wrapper>
       <Header />
       <Routes>
-        <Route path='/heroes' element={<HeroesList />} />
+        <Route path='/' element={<HeroesList />} />
         <Route path='/hero/:id' element={<HeroPage />} />
       </Routes>
     </Wrapper>

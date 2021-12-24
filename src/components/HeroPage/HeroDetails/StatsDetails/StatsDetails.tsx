@@ -14,14 +14,14 @@ import {
 } from '../../../../constants/api';
 
 interface IStats {
-  base_attack_min: number | any;
-  base_attack_max: number | any;
-  attack_rate: number | any;
-  attack_range: number | any;
-  projectile_speed: number | any;
-  armor: number | any;
-  mr: number | any;
-  move_speed: number | any;
+  base_attack_min: number;
+  base_attack_max: number;
+  attack_rate: number;
+  attack_range: number;
+  projectile_speed: number;
+  armor: number;
+  mr: number;
+  move_speed: number;
 }
 
 const StatsDetails: React.FC<IStats> = ({

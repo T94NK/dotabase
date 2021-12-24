@@ -11,7 +11,7 @@ import { HeroDetails } from '../../components/HeroPage/HeroDetails';
 
 const HeroPage: React.FC = () => {
   const [heroes, setHeroes] = useState<Array<HeroTypes>>([]);
-  const [hero, setHero] = useState<HeroTypes>();
+  const [hero, setHero] = useState<HeroTypes | null>(null);
   const params = useParams();
   const { id } = params;
 
@@ -30,39 +30,43 @@ const HeroPage: React.FC = () => {
     });
   }, []);
 
+  if (hero === null) {
+    return <div>Loading</div>;
+  }
+
   return (
     <>
       <HeroPageContainer>
-        <HeroPortrait heroName={hero?.name || ''} />
+        <HeroPortrait heroName={hero.name} />
         <HeroSummary
-          heroAttr={hero?.primary_attr || ''}
-          heroLocalName={hero?.localized_name || ''}
-          heroAttackType={hero?.attack_type || ''}
+          heroAttr={hero.primary_attr}
+          heroLocalName={hero.localized_name}
+          heroAttackType={hero.attack_type}
         />
         <PageVerticalBar
-          heroAttr={hero?.primary_attr || ''}
-          heroLocalName={hero?.localized_name || ''}
-          heroId={hero?.id}
+          heroAttr={hero.primary_attr}
+          heroLocalName={hero.localized_name}
+          heroId={hero.id}
         />
       </HeroPageContainer>
       <HeroDetails
-        name={hero?.name || ''}
-        health={hero?.base_health}
-        mana={hero?.base_mana}
-        str={hero?.base_str}
-        agi={hero?.base_agi}
-        int={hero?.base_int}
-        str_gain={hero?.str_gain}
-        agi_gain={hero?.agi_gain}
-        int_gain={hero?.int_gain}
-        base_attack_min={hero?.base_attack_min}
-        base_attack_max={hero?.base_attack_max}
-        attack_rate={hero?.attack_rate}
-        attack_range={hero?.attack_range}
-        projectile_speed={hero?.projectile_speed}
-        armor={hero?.base_armor}
-        mr={hero?.base_mr}
-        move_speed={hero?.move_speed}
+        name={hero.name}
+        health={hero.base_health}
+        mana={hero.base_mana}
+        str={hero.base_str}
+        agi={hero.base_agi}
+        int={hero.base_int}
+        str_gain={hero.str_gain}
+        agi_gain={hero.agi_gain}
+        int_gain={hero.int_gain}
+        base_attack_min={hero.base_attack_min}
+        base_attack_max={hero.base_attack_max}
+        attack_rate={hero.attack_rate}
+        attack_range={hero.attack_range}
+        projectile_speed={hero.projectile_speed}
+        armor={hero.base_armor}
+        mr={hero.base_mr}
+        move_speed={hero.move_speed}
       />
     </>
   );
